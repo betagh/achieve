@@ -1,5 +1,4 @@
 class BlogsController < ApplicationController
-
   def index
     @blogs = Blog.all
   end
@@ -14,13 +13,13 @@ class BlogsController < ApplicationController
 
   def create
     @blog = Blog.new(blogs_params)
-    if @blog.save
-      # 一覧画面へ遷移して"ブログを作成しました！"とメッセージを表示します。
-      redirect_to blogs_path, notice: "ブログを作成しました！"
-    else
-      # 入力フォームを再描画します。
-      render :new
-    end
+      if @blog.save
+        # 一覧画面へ遷移して"ブログを作成しました！"とメッセージを表示します。
+        redirect_to blogs_path, notice: "ブログを作成しました！"
+      else
+        # 入力フォームを再描画します。
+        render :new
+      end
   end
 
   def edit
@@ -29,15 +28,15 @@ class BlogsController < ApplicationController
   
   def update
     @blog = Blog.find(params[:id])
-    if @blog.update(blogs_params)
-      redirect_to blogs_path, notice:"ブログを編集しました！"
-      # 一覧画面へ遷移して"ブログを編集しました！"とメッセージを表示します。
-    else
-      # 入力フォームを再描画します。
-      render :new
-    end
+      if @blog.update(blogs_params)
+        redirect_to blogs_path, notice:"ブログを編集しました！"
+        # 一覧画面へ遷移して"ブログを編集しました！"とメッセージを表示します。
+      else
+        # 入力フォームを再描画します。
+        render :new
+      end
   end
-  
+
   def destroy
     @blog = Blog.find(params[:id])
     @blog.destroy

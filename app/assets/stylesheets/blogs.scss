@@ -8,6 +8,7 @@
     word-wrap: break-word;
   }
 }
+
 input[type="submit"].btn-block{
   margin: 15px 0;
 }
@@ -36,5 +37,5 @@ input[type="submit"].btn-block{
   z-index: 20;
   &:hover {
   opacity: 0.7;
-}
+  }
 }
